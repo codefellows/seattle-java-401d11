@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salmon Cookies Stores</title>
+</head>
+<body>
+<h1>Salmon Cookie Store Manager</h1>
+<ul th:each="salmonStore : ${stores}">
+    <li th:text="'Store name: ' + ${salmonStore.name}"></li>
+    <li th:text="'Average cookies per day: ' + ${salmonStore.averageCookiesPerDay}"></li>
+    <div>Employees: </div>
+    <ul th:each="employee : ${salmonStore.employeesAtThisStore}">
+        <li th:text="${employee.name}"></li>
+    </ul>
+    <form action="/add-employee" method="post">
+        <fieldset>
+            <legend>Add Employee To This Store</legend>
+            <label for="name">Employee Name</label>
+            <input type="text" name="employeeName">
+            <input type="hidden" name="salmonStoreName" th:value="${salmonStore.name}">
+            <input type="submit" value="Add Employee To Store">
+        </fieldset>
+    </form>
+</ul>
+
+<form action="/" method="post">
+    <fieldset>
+        <legend>Add Salmon Cookies Store</legend>
+        <label for="name">Store Name</label>
+        <input type="text" name="name">
+        <label for="averageCookiesPerDay">Average Cookies Per Day</label>
+        <input type="text" name="averageCookiesPerDay">
+        <input type="submit" value="Add Store">
+    </fieldset>
+</form>
+
+<form action="/delete" th:method="delete">
+    <input type="submit" value="Delete Store">
+</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<link rel="stylesheet" href="/css/bff-style.css" />
+<img src="/images/Best-Friend-Quotes-01.jpg"/>
+<h1 th:text="${bestFriendName}">NAME OF BEST FRIEND</h1>
+<p>I have known him for <span th:text="${bestFriendYears}">YEARS</span> years.</p>
+<p th:text="'His job is ' + ${job} + ' at Siemens.'">WHAT THEY DO</p>
+</body>
+</html>
