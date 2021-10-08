@@ -11,7 +11,7 @@ public class BinaryTree<T>
         Object[] outputValues = null;
         // Should return something like "A B C D"
         // Can use an ArrayList internally
-        // ArrayList.toValues returns Object[], hence why Object[] is the return type
+        // ArrayList.toArray() returns Object[], hence why Object[] is the return type
         // outputValues = preOrder(root);
         // TODO: implement me
         return outputValues;
