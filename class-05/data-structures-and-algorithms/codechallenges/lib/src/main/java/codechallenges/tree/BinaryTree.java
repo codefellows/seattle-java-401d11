@@ -1,30 +1,33 @@
 package codechallenges.tree;
 
+import java.util.ArrayList;
+
 public class BinaryTree<T>
 {
     Node <T> root;
 
-    public String[] preOrderTraversal()
+    public Object[] preOrderTraversal()
     {
-        String[] outputValues = null;
+        Object[] outputValues = null;
         // Should return something like "A B C D"
         // Can use an ArrayList internally
+        // ArrayList.toValues returns Object[], hence why Object[] is the return type
         // outputValues = preOrder(root);
         // TODO: implement me
         return outputValues;
     }
 
-    public String[] inOrderTraversal()
+    public Object[] inOrderTraversal()
     {
-        String[] outputValues = null;
+        Object[] outputValues = null;
         // outputValues = inOrder(root);
         // TODO: implement me
         return outputValues;
     }
 
-    public String[] postOrderTraversal()
+    public Object[] postOrderTraversal()
     {
-        String[] outputValues = null;
+        Object[] outputValues = null;
         // outputValues = postOrder(root);
         // TODO: implement me
         return outputValues;
