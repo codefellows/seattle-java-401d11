@@ -68,6 +68,9 @@ public class DinoBookController
         m.addAttribute("dinoUserUsername", dinoUser.getUsername());
         m.addAttribute("dinoUserNickname", dinoUser.getNickname());
         m.addAttribute("dinoUserId", dinoUser.getId());
+        m.addAttribute("dinoUserTestTextArea", dinoUser.getTestTextArea());
+        m.addAttribute("dinoUserManagers", dinoUser.getManagers());
+        m.addAttribute("dinoUserEmployees", dinoUser.getEmployees());
 
         m.addAttribute("testDate", LocalDateTime.now());
 
@@ -75,13 +78,14 @@ public class DinoBookController
     }
 
     @PutMapping("/users/{id}")
-    public RedirectView editUserInfo(Model m, Principal p, @PathVariable Long id, String username, String nickname, RedirectAttributes redir)
+    public RedirectView editUserInfo(Model m, Principal p, @PathVariable Long id, String username, String nickname, String testTextArea, RedirectAttributes redir)
     {
         if ((p != null) && (p.getName().equals(username)))
         {
             DinoUser dinoUser = dinoUserRepository.findById(id).orElseThrow();
             dinoUser.setUsername(username);
             dinoUser.setNickname(nickname);
+            dinoUser.setTestTextArea(testTextArea);
             dinoUserRepository.save(dinoUser);
         }
         else
@@ -90,5 +94,48 @@ public class DinoBookController
         }
 
         return new RedirectView("/users/" + id);
+    }
+
+    @DeleteMapping("/users/{id}")
+    public RedirectView deleteUser(@PathVariable Long id)
+    {
+        DinoUser dinoUser = dinoUserRepository.findById(id).orElseThrow();
+        dinoUserRepository.delete(dinoUser);
+
+        return new RedirectView("/");
+    }
+
+    @PutMapping("manage-user/{managedDinoId}")
+    public RedirectView manageUser(Principal p, @PathVariable Long managedDinoId)
+    {
+        if (p == null)
+        {
+            throw new IllegalArgumentException("User must be logged in to manage other users!");
+        }
+
+        DinoUser browsingDino = dinoUserRepository.findByUsername(p.getName());
+        DinoUser managedDino = dinoUserRepository.findById(managedDinoId).orElseThrow();
+
+        browsingDino.getEmployees().add(managedDino);
+        dinoUserRepository.save(browsingDino);
+
+        return new RedirectView("/users/" + managedDinoId);
+    }
+
+    @PutMapping("employee-of-user/{toBeEmployedDinoId}")
+    public RedirectView employUser(Principal p, @PathVariable Long toBeEmployedDinoId)
+    {
+        if (p == null)
+        {
+            throw new IllegalArgumentException("User must be logged in to employ other users!");
+        }
+
+        DinoUser browsingDino = dinoUserRepository.findByUsername(p.getName());
+        DinoUser toBeEmployedDino = dinoUserRepository.findById(toBeEmployedDinoId).orElseThrow();
+
+        browsingDino.getEmployees().add(toBeEmployedDino);
+        dinoUserRepository.save(browsingDino);
+
+        return new RedirectView("/users/" + toBeEmployedDinoId);
     }
 }

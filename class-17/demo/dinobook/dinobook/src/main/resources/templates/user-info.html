@@ -13,13 +13,37 @@
 <div th:replace="/fragments/nav-header :: dino-error"></div>
 <h1 th:text="${'User info for user id: ' + dinoUserId}"></h1>
 
+<form th:action="${'/manage-user/' + dinoUserId}" th:method="PUT">
+    <input type="submit" value="Manage This Dinosaur">
+</form>
+<form th:action="${'/employee-of-user/' + dinoUserId}" th:method="PUT">
+    <input type="submit" value="Employ This Dinosaur">
+</form>
+<form th:action="${'/users/' + dinoUserId}" th:method="DELETE">
+    <input type="submit" value="Delete This Dinosaur">
+</form>
+
 <form th:action="${'/users/' + dinoUserId}" th:method="PUT">
     <label for="username">Username</label>
     <input th:value="${dinoUserUsername}" type="text" name="username" th:disabled="${!username.equals(dinoUserUsername)}">
     <label for="nickname">Nickname</label>
     <input th:value="${dinoUserNickname}" type="text" name="nickname" th:disabled="${!username.equals(dinoUserUsername)}">
+    <label for="testTextArea">TestTextArea</label>
+    <textarea th:text="${dinoUserTestTextArea}" name="testTextArea" rows="5" cols="100"></textarea>
     <input th:if="${username.equals(dinoUserUsername)}" type="submit" value="Edit User Info">
 </form>
+
+<h3>Managers:</h3>
+<ul th:each="manager : ${dinoUserManagers}">
+    <ol th:text="${manager.username}"></ol>
+</ul>
+<h3>Employees:</h3>
+<ul th:each="employee : ${dinoUserEmployees}">
+    <ol th:text="${employee.username}"></ol>
+</ul>
+
+<div th:text="'Regular text nickname: ' + ${dinoUserNickname}"></div>
+<div th:text="'Test text: ' + ${dinoUserTestTextArea}" style="white-space: pre;"></div>
 
 <div th:text="${'testDate: ' + #temporals.format(testDate, 'yyyy-MM-dd HH:mm:ss')}"></div>
 

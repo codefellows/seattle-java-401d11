@@ -45,7 +45,7 @@ public class DinoUserController
 
     // Step 6B: Create user when submitting
     @PostMapping("/signup")
-    public RedirectView createUser(Model m, String username, String password, String nickname, RedirectAttributes redir)
+    public RedirectView createUser(Model m, String username, String password, String nickname, String testTextArea, RedirectAttributes redir)
     {
         DinoUser existingDinoUser = dinoUserRepository.findByUsername(username);
         if (existingDinoUser != null)
@@ -57,6 +57,7 @@ public class DinoUserController
         DinoUser dinoUser = new DinoUser();
         dinoUser.setUsername(username);
         dinoUser.setNickname(nickname);
+        dinoUser.setTestTextArea(testTextArea);
         String encryptedPassword = passwordEncoder.encode(password);
         dinoUser.setPassword(encryptedPassword);
 
