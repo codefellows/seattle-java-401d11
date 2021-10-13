@@ -58,6 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                 .anyRequest().authenticated()
             .and()
                 .formLogin()
+                .defaultSuccessUrl("/")
                 .loginPage("/login")// any unauthorized request goes here
             .and()
                 .logout()
