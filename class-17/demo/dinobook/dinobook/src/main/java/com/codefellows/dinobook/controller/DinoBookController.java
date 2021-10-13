@@ -48,7 +48,7 @@ public class DinoBookController
 
         return "/test.html";
 
-        // TODO: research showing the exception message on the error page
+        // Uncomment this (and comment out the above code) to see the exception message on the error page
         //throw new RuntimeException("This is my error");
     }
 

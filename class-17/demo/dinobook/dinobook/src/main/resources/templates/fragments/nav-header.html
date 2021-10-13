@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
 <h3 th:if="${username}" th:text="'Current User from fragment 1: ' + ${username}"></h3>
 <nav th:if="${username}" th:fragment="dino-header" th:text="'Current User from fragment 2: ' + ${username}"></nav>
 <nav th:if="${errorMessage}" class="errorMessage" th:fragment="dino-error" th:text="'Error: ' + ${errorMessage}"></nav>

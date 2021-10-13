@@ -9,6 +9,7 @@
 </head>
 <body>
 <h3 th:if="${username != null}" th:text="${'Current user: ' + username + ' with nickname ' + nickname}"></h3>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 <div th:replace="/fragments/nav-header :: dino-error"></div>
 <h1 th:text="${'User info for user id: ' + dinoUserId}"></h1>
 

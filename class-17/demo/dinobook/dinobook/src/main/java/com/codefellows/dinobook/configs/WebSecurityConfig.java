@@ -54,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
             .authorizeRequests()
                 .antMatchers("/").permitAll()  // allow all users to have access to this
                 .antMatchers("/userInfo", "/login", "/signup").permitAll()
-                .antMatchers("/resources/**").permitAll()
+                .antMatchers("/css/**").permitAll()
                 .anyRequest().authenticated()
             .and()
                 .formLogin()
