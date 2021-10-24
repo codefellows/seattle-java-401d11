@@ -8,10 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<div th:replace="/fragments/nav-header :: h3"></div>
-<div th:replace="/fragments/nav-header :: dino-header"></div>
-<h1>Welcome to DinoBook, the best home for dinos on the internet!</h1>
-
-<a href="/logout">Log out</a>
+<h1>I AM ERROR</h1>
+<span th:if="${exception}" th:text="${message}"></span>
 </body>
 </html>

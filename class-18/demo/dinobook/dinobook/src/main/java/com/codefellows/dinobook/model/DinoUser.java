@@ -3,11 +3,9 @@ package com.codefellows.dinobook.model;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 // Step 1A: Make user model (NOT called "User"!)
 @Entity
@@ -21,6 +19,20 @@ public class DinoUser implements UserDetails
     private String username;
     private String password;
     private String nickname;
+    private String testTextArea;
+
+    // Don't cascade here! You don't need it; the join table will update when users are removed
+    @ManyToMany(mappedBy = "employees")
+    Set<DinoUser> managers;
+
+    // Don't cascade here! You don't need it; the join table will update when users are removed
+    @ManyToMany
+    @JoinTable(
+        name="dinomanagers_to_dinoemployees",  // table name
+        joinColumns ={@JoinColumn(name="manager")},
+        inverseJoinColumns = {@JoinColumn(name="employee")}
+    )
+    Set<DinoUser> employees;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities()
@@ -92,5 +104,25 @@ public class DinoUser implements UserDetails
     public void setNickname(String nickname)
     {
         this.nickname = nickname;
+    }
+
+    public String getTestTextArea()
+    {
+        return testTextArea;
+    }
+
+    public void setTestTextArea(String testTextArea)
+    {
+        this.testTextArea = testTextArea;
+    }
+
+    public Set<DinoUser> getManagers()
+    {
+        return managers;
+    }
+
+    public Set<DinoUser> getEmployees()
+    {
+        return employees;
     }
 }

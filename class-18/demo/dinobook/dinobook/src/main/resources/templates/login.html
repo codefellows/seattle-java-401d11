@@ -8,10 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-<div th:replace="/fragments/nav-header :: h3"></div>
-<div th:replace="/fragments/nav-header :: dino-header"></div>
-<h1>Welcome to DinoBook, the best home for dinos on the internet!</h1>
+<h1>Login</h1>
+<h2>(or sign up <a href="/signup">here</a>)</h2>
+<form action="/login" method="POST">
+    <label for="username">Username</label>
+    <input type="text" name="username">
 
-<a href="/logout">Log out</a>
+    <label for="username">Password</label>
+    <input type="password" name="password">
+
+    <input type="submit" value="Log in">
+</form>
 </body>
 </html>

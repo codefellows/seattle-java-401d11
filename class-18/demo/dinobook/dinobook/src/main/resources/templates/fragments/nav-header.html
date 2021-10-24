@@ -8,10 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-<div th:replace="/fragments/nav-header :: h3"></div>
-<div th:replace="/fragments/nav-header :: dino-header"></div>
-<h1>Welcome to DinoBook, the best home for dinos on the internet!</h1>
-
-<a href="/logout">Log out</a>
+<h3 th:if="${username}" th:text="'Current User from fragment 1: ' + ${username}"></h3>
+<nav th:if="${username}" th:fragment="dino-header" th:text="'Current User from fragment 2: ' + ${username}"></nav>
+<nav th:if="${errorMessage}" class="errorMessage" th:fragment="dino-error" th:text="'Error: ' + ${errorMessage}"></nav>
 </body>
 </html>

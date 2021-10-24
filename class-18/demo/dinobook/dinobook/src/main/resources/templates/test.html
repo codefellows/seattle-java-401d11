@@ -8,9 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-<div th:replace="/fragments/nav-header :: h3"></div>
-<div th:replace="/fragments/nav-header :: dino-header"></div>
-<h1>Welcome to DinoBook, the best home for dinos on the internet!</h1>
+<h1>Test Page (only logged-in users here!)</h1>
+
+<h3 th:if="${username != null}" th:text="${'Current user: ' + username + ' with nickname ' + nickname}"></h3>
 
 <a href="/logout">Log out</a>
 </body>
