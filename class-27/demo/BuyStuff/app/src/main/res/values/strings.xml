@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BuyStuff</string>
+    <string name="HelloWorld">Hello 401 World!</string>
+    <string name="ProductName">Product Name</string>
+    <string name="ProductCategory">Product Category</string>
+    <string name="TestingText">I changed this in the code!</string>
+    <string name="Submit">Submit</string>
+    <string name="Submitted">Submitted!</string>
+    <string name="OrderForm">Order Form</string>
+    <string name="UserSettings">User Settings</string>
+    <string name="Address">Address</string>
+    <string name="Save">Save</string>
+    <string name="SettingsSaved">Settings saved!</string>
+    <string name="Nickname">Nickname</string>
+    <string name="WelcomeUsername">Welcome %1$s!</string>
+</resources>
