@@ -1,0 +1,13 @@
+type ShoppingItem @model {
+  id: ID!
+  itemName: String
+  timeAdded: AWSDateTime
+  productCategory: ProductCategoryEnum
+}
+
+enum ProductCategoryEnum {
+  CLOTHES,
+  PERSONAL_ELECTRONICS,
+  FOOD,
+  UNKNOWN
+}

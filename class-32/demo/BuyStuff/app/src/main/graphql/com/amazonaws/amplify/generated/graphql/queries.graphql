@@ -1,0 +1,28 @@
+# this is an auto generated file. This will be overwritten
+query GetShoppingItem($id: ID!) {
+  getShoppingItem(id: $id) {
+    id
+    itemName
+    timeAdded
+    productCategory
+    createdAt
+    updatedAt
+  }
+}
+query ListShoppingItems(
+  $filter: ModelShoppingItemFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listShoppingItems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      itemName
+      timeAdded
+      productCategory
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

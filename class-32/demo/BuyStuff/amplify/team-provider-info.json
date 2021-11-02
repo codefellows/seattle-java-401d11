@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-buystuff-dev-111446-authRole",
+      "UnauthRoleArn": "arn:aws:iam::216816899200:role/amplify-buystuff-dev-111446-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::216816899200:role/amplify-buystuff-dev-111446-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-buystuff-dev-111446-deployment",
+      "UnauthRoleName": "amplify-buystuff-dev-111446-unauthRole",
+      "StackName": "amplify-buystuff-dev-111446",
+      "StackId": "arn:aws:cloudformation:us-west-2:216816899200:stack/amplify-buystuff-dev-111446/9b6b6d50-3b3f-11ec-854f-06a3ee04cdc3",
+      "AmplifyAppId": "d3asuav9ukppsu"
+    }
+  }
+}
