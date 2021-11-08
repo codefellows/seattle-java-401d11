@@ -1,0 +1,16 @@
+type ShoppingItem @model
+@key(name: "byOurItem", fields: ["businessUnitId"])
+{
+  id: ID!
+  businessUnitId: ID!
+  itemName: String
+  timeAdded: AWSDateTime
+  productCategory: String
+  businessUnit: BusinessUnit! @connection(fields: ["businessUnitId"])
+}
+type BusinessUnit @model
+{
+  id: ID!
+  businessUnitName: String
+  shoppingItems: [ShoppingItem] @connection(keyName: "byOurItem", fields: ["id"])
+}
