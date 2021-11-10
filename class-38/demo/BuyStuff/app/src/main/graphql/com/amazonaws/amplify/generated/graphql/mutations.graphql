@@ -1,0 +1,145 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateShoppingItem(
+  $input: CreateShoppingItemInput!
+  $condition: ModelShoppingItemConditionInput
+) {
+  createShoppingItem(input: $input, condition: $condition) {
+    id
+    businessUnitId
+    itemName
+    timeAdded
+    productCategory
+    businessUnit {
+      id
+      businessUnitName
+      shoppingItems {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    productImageKey
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateShoppingItem(
+  $input: UpdateShoppingItemInput!
+  $condition: ModelShoppingItemConditionInput
+) {
+  updateShoppingItem(input: $input, condition: $condition) {
+    id
+    businessUnitId
+    itemName
+    timeAdded
+    productCategory
+    businessUnit {
+      id
+      businessUnitName
+      shoppingItems {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    productImageKey
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteShoppingItem(
+  $input: DeleteShoppingItemInput!
+  $condition: ModelShoppingItemConditionInput
+) {
+  deleteShoppingItem(input: $input, condition: $condition) {
+    id
+    businessUnitId
+    itemName
+    timeAdded
+    productCategory
+    businessUnit {
+      id
+      businessUnitName
+      shoppingItems {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    productImageKey
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateBusinessUnit(
+  $input: CreateBusinessUnitInput!
+  $condition: ModelBusinessUnitConditionInput
+) {
+  createBusinessUnit(input: $input, condition: $condition) {
+    id
+    businessUnitName
+    shoppingItems {
+      items {
+        id
+        businessUnitId
+        itemName
+        timeAdded
+        productCategory
+        productImageKey
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateBusinessUnit(
+  $input: UpdateBusinessUnitInput!
+  $condition: ModelBusinessUnitConditionInput
+) {
+  updateBusinessUnit(input: $input, condition: $condition) {
+    id
+    businessUnitName
+    shoppingItems {
+      items {
+        id
+        businessUnitId
+        itemName
+        timeAdded
+        productCategory
+        productImageKey
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteBusinessUnit(
+  $input: DeleteBusinessUnitInput!
+  $condition: ModelBusinessUnitConditionInput
+) {
+  deleteBusinessUnit(input: $input, condition: $condition) {
+    id
+    businessUnitName
+    shoppingItems {
+      items {
+        id
+        businessUnitId
+        itemName
+        timeAdded
+        productCategory
+        productImageKey
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
