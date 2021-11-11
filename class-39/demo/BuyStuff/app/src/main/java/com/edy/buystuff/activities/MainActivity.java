@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity
 
         // Not in lab, here is how to use location subscriptions to get locations repeatedly
 
-        LocationRequest locationRequest = LocationRequest.create();
+        /*LocationRequest locationRequest = LocationRequest.create();
         locationRequest.setInterval(LOCATION_POLLING_INTERVAL);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
@@ -289,7 +289,7 @@ public class MainActivity extends AppCompatActivity
             }
         };
 
-        fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, getMainLooper());
+        fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, getMainLooper());*/
     }
 
     protected void selectImage()
