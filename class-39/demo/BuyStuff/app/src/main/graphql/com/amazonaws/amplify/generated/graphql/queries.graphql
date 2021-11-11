@@ -1,0 +1,95 @@
+# this is an auto generated file. This will be overwritten
+query GetShoppingItem($id: ID!) {
+  getShoppingItem(id: $id) {
+    id
+    businessUnitId
+    itemName
+    timeAdded
+    productCategory
+    businessUnit {
+      id
+      businessUnitName
+      shoppingItems {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    productImageKey
+    productLatitude
+    productLongitude
+    productCity
+    createdAt
+    updatedAt
+  }
+}
+query ListShoppingItems(
+  $filter: ModelShoppingItemFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listShoppingItems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      businessUnitId
+      itemName
+      timeAdded
+      productCategory
+      businessUnit {
+        id
+        businessUnitName
+        createdAt
+        updatedAt
+      }
+      productImageKey
+      productLatitude
+      productLongitude
+      productCity
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetBusinessUnit($id: ID!) {
+  getBusinessUnit(id: $id) {
+    id
+    businessUnitName
+    shoppingItems {
+      items {
+        id
+        businessUnitId
+        itemName
+        timeAdded
+        productCategory
+        productImageKey
+        productLatitude
+        productLongitude
+        productCity
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListBusinessUnits(
+  $filter: ModelBusinessUnitFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listBusinessUnits(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      businessUnitName
+      shoppingItems {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
