@@ -1,0 +1,14 @@
+{
+    "resourceName": "buyStuffDescriptionSpeechGenerator",
+    "convertPolicyName": "speechGeneratorPolicy4d9c5798",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "convertType": "speechGenerator",
+    "language": "en-US",
+    "voice": "Joanna",
+    "access": "auth"
+}

@@ -1,0 +1,145 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateShoppingItem {
+  onCreateShoppingItem {
+    id
+    businessUnitId
+    itemName
+    timeAdded
+    productCategory
+    businessUnit {
+      id
+      businessUnitName
+      shoppingItems {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    productImageKey
+    productLatitude
+    productLongitude
+    productCity
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateShoppingItem {
+  onUpdateShoppingItem {
+    id
+    businessUnitId
+    itemName
+    timeAdded
+    productCategory
+    businessUnit {
+      id
+      businessUnitName
+      shoppingItems {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    productImageKey
+    productLatitude
+    productLongitude
+    productCity
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteShoppingItem {
+  onDeleteShoppingItem {
+    id
+    businessUnitId
+    itemName
+    timeAdded
+    productCategory
+    businessUnit {
+      id
+      businessUnitName
+      shoppingItems {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    productImageKey
+    productLatitude
+    productLongitude
+    productCity
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateBusinessUnit {
+  onCreateBusinessUnit {
+    id
+    businessUnitName
+    shoppingItems {
+      items {
+        id
+        businessUnitId
+        itemName
+        timeAdded
+        productCategory
+        productImageKey
+        productLatitude
+        productLongitude
+        productCity
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateBusinessUnit {
+  onUpdateBusinessUnit {
+    id
+    businessUnitName
+    shoppingItems {
+      items {
+        id
+        businessUnitId
+        itemName
+        timeAdded
+        productCategory
+        productImageKey
+        productLatitude
+        productLongitude
+        productCity
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteBusinessUnit {
+  onDeleteBusinessUnit {
+    id
+    businessUnitName
+    shoppingItems {
+      items {
+        id
+        businessUnitId
+        itemName
+        timeAdded
+        productCategory
+        productImageKey
+        productLatitude
+        productLongitude
+        productCity
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
