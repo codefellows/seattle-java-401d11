@@ -1,0 +1,21 @@
+{
+    "appName": "buystuff",
+    "roleName": "pinpointLambdaRoleddf0d903",
+    "cloudformationPolicyName": "cloudformationPolicyddf0d903",
+    "cloudWatchPolicyName": "cloudWatchPolicyddf0d903",
+    "pinpointPolicyName": "pinpointPolicyddf0d903",
+    "authPolicyName": "pinpoint_amplify_ddf0d903",
+    "unauthPolicyName": "pinpoint_amplify_ddf0d903",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
